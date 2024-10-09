@@ -33,4 +33,8 @@ deleteEvent(eventId: number): boolean {
     }
     return false;
 }
+
+getEvent(eventId: number): Event | undefined {
+    return this.events.find(event => event.id === eventId);
 }
+
