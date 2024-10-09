@@ -1,3 +1,5 @@
+import { Event } from '../interfaces/interface';
+
 export class eventManager {
     private events: Event[] = [];
     private nextEventId: number = 1;
@@ -11,5 +13,8 @@ export class eventManager {
             date,
             participants: []
         };
-
+        this.events.push(newEvent);
+        return newEvent;
 }
+
+editEvent(id: number, name: string, place: string, date: string): Event {
