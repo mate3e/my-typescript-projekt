@@ -14,5 +14,13 @@ export class participantManager {
         return newParticipant;
     }
 
+    deleteParticipant(participantId: number): boolean {
+        const participantIndex = this.participants.findIndex(participant => participant.id === participantId);
+        if (participantIndex !== -1) {
+            this.participants.splice(participantIndex, 1);
+            return true;
+        }
+        return false;
+    }
 
 }
