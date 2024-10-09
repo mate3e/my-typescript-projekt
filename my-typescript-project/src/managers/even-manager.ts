@@ -17,4 +17,20 @@ export class eventManager {
         return newEvent;
 }
 
-editEvent(id: number, name: string, place: string, date: string): Event {
+editEvenz(eventId: number, updatedEvent: Partial<Event>): Event | undefined {
+    const event = this.events.find(event => event.id === eventId);
+    if (event) {
+        Object.assign(event, updatedEvent);
+        return event;
+    } 
+}
+
+deleteEvent(eventId: number): boolean {
+    const eventIndex = this.events.findIndex(event => event.id === eventId);
+    if (eventIndex !== -1) {
+        this.events.splice(eventIndex, 1);
+        return true;
+    }
+    return false;
+}
+}
