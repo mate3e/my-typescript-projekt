@@ -38,3 +38,15 @@ getEvent(eventId: number): Event | undefined {
     return this.events.find(event => event.id === eventId);
 }
 
+eventByNames(eventName: string): Event | undefined {
+    return this.events.find(event => event.name === eventName);
+}
+
+eventByPlaces(eventPlace: string): Event | undefined {
+    return this.events.find(event => event.place === eventPlace);
+}
+
+eventByDates(eventDate: string): Event | undefined {
+    return this.events.find(event => event.date === eventDate);
+}
+}
