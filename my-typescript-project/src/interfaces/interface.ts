@@ -1,10 +1,12 @@
-interface participant {
+export interface participant {
     id: number;
     name: string;
     age: number;
 }
 
-interface event {
+export interface event {
     name: string;
     place: string;
     date: string;
+    participants: participant[];
+}
